@@ -29,7 +29,7 @@ const Sidebar = async ({ user }: { user: any }) => {
                 <div className='border-b border-b-gray-300'>
                     <div className='p-2 mt-5 text-center'>
                         <h1 className='font-bold hover:underline cursor-pointer'>{user ? `${user?.firstName} ${user?.lastName}` : "Patel Mern Stack"}</h1>
-                        {/* <p className='text-xs'>@{user ? `${user?.username}` : 'username'}</p> */}
+                        <p className='text-xs'>@{user ? `${user?.username}` : 'username'}</p>
                     </div>
                 </div>
             </div>
