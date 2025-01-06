@@ -2,7 +2,7 @@
 import React, { useState } from 'react'
 import ProfilePhoto from './shared/ProfilePhoto'
 import { Input } from './ui/input'
-// import { PostDialog } from './PostDialog'
+import { PostDialog } from './PostDialog'
 
 const PostInput = ({ user }: { user: any }) => {
     const [open , setOpen] = useState<boolean>(false);
@@ -19,7 +19,7 @@ const PostInput = ({ user }: { user: any }) => {
                     className='rounded-full hover:bg-gray-100 h-12 cursor-pointer'
                     onClick={inputHandler}
                 />
-                {/* <PostDialog setOpen={setOpen} open={open} src={user?.imageUrl}/> */}
+                <PostDialog setOpen={setOpen} open={open} src={user?.imageUrl}/>
             </div>
         </div>
     )
