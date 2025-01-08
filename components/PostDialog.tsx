@@ -10,7 +10,7 @@ import ProfilePhoto from "./shared/ProfilePhoto"
 import { Textarea } from "./ui/textarea"
 import { Images } from "lucide-react"
 import { useRef, useState } from "react"
-// import { readFileAsDataUrl } from "@/lib/utils"
+import { readFileAsDataUrl } from "@/lib/utils"
 import Image from "next/image"
 // import { createPostAction } from "@/lib/serveractions"
 // import { toast } from "sonner"
@@ -25,13 +25,13 @@ export function PostDialog({ setOpen, open, src }: { setOpen: any, open: boolean
         setInputText(e.target.value);
     }
 
-    // const fileChangeHandler = async (e: React.ChangeEvent<HTMLInputElement>) => {
-    //     const file = e.target.files?.[0];
-    //     if (file) {
-    //         const dataUrl = await readFileAsDataUrl(file);
-    //         setSelectedFile(dataUrl);
-    //     }
-    // }
+    const fileChangeHandler = async (e: React.ChangeEvent<HTMLInputElement>) => {
+        const file = e.target.files?.[0];
+        if (file) {
+            const dataUrl = await readFileAsDataUrl(file);
+            setSelectedFile(dataUrl);
+        }
+    }
     // const postActionHandler = async (formData: FormData) => {
     //     const inputText = formData.get('inputText') as string;
     //     try {
