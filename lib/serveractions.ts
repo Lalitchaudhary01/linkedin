@@ -6,7 +6,7 @@ import { currentUser } from "@clerk/nextjs/server";
 import { v2 as cloudinary } from "cloudinary";
 import connectDB from "./db";
 import { revalidatePath } from "next/cache";
-import { Comment } from "@/models/comment.model";
+import { Comment, IComment } from "@/models/comment.model";
 
 cloudinary.config({
   cloud_name: process.env.CLOUD_NAME,
@@ -113,7 +113,7 @@ export const createCommentAction = async (
       user: userDatabase,
     });
 
-    post.comments?.push(comment._id);
+    post.comments?.push(comment as IComment);
     await post.save();
 
     revalidatePath("/");

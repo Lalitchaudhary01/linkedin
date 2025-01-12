@@ -4,6 +4,7 @@ import { IComment } from "./comment.model";
 export interface IPost {
   description: string;
   user: IUser;
+
   imageUrl?: string;
   likes?: string[];
   comments?: IComment[];
@@ -11,6 +12,7 @@ export interface IPost {
 export interface IPostDocument extends IPost, Document {
   createdAt: Date;
   updatedAt: Date;
+  _id: string;
 }
 const postSchema = new mongoose.Schema<IPostDocument>(
   {
