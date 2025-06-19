@@ -8,7 +8,7 @@ import { Badge } from './ui/badge'
 import { IPostDocument } from '@/models/post.model'
 import PostContent from './PostContent'
 import SocialOptions from './SocialOptions'
-// import ReactTimeago from "react-timeago";
+import ReactTimeago from "react-timeago";
 import { deletePostAction } from '@/lib/serveractions'
 
 const Post = ({ post }: { post: IPostDocument }) => {
@@ -26,7 +26,7 @@ const Post = ({ post }: { post: IPostDocument }) => {
                         <p className='text-xs text-gray-500'>@{user ? user?.username : "username"}</p>
 
                         <p className='text-xs text-gray-500'>
-                            {/* <ReactTimeago date={new Date(post.createdAt)} /> */}
+                            <ReactTimeago date={new Date(post.createdAt)} />
                         </p>
                     </div>
                 </div>
@@ -34,7 +34,7 @@ const Post = ({ post }: { post: IPostDocument }) => {
                     {
                         loggedInUser && (
                             <Button onClick={() => {
-                                const res = deletePostAction(post._id as string);
+                                const res = deletePostAction(post._id);
                             }} size={'icon'} className='rounded-full' variant={'outline'}>
                                 <Trash2 />
                             </Button>

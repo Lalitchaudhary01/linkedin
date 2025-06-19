@@ -14,7 +14,6 @@ import { readFileAsDataUrl } from "@/lib/utils"
 import Image from "next/image"
 import { createPostAction } from "@/lib/serveractions"
 import { toast } from "sonner"
-import { Input } from "./ui/input"
 
 export function PostDialog({ setOpen, open, src }: { setOpen: any, open: boolean, src: string }) {
     const inputRef = useRef<HTMLInputElement>(null);
@@ -87,7 +86,7 @@ export function PostDialog({ setOpen, open, src }: { setOpen: any, open: boolean
                     </div>
                     <DialogFooter>
                         <div className="flex items-center gap-4">
-                            <Input ref={inputRef} onChange={fileChangeHandler} type="file" name="image" className="hidden" accept="image/*" />
+                            <input ref={inputRef} onChange={fileChangeHandler} type="file" name="image" className="hidden" accept="image/*" />
                             <Button type="submit">Post</Button>
                         </div>
                     </DialogFooter>
